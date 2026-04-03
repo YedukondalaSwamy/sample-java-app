@@ -38,6 +38,14 @@ jobs:
     - name: Run tests
       run: mvn test
 
+    # 🔹 Install Azure CLI manually
+    - name: Install Azure CLI
+      run: |
+        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+    - name: Verify Azure CLI
+      run: az --version
+
     # 🔐 Azure Login using Service Principal
     - name: Azure Login
       uses: azure/login@v2
