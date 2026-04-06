@@ -79,22 +79,22 @@ jobs:
       run: |
         docker push $IMAGE_NAME:${TAG}
 
-    # 🔹 Install Azure CLI manually
-    - name: Install Azure CLI
-      run: |
-        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+    # # 🔹 Install Azure CLI manually
+    # - name: Install Azure CLI
+    #   run: |
+    #     curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-    - name: Verify Azure CLI
-      run: az --version
+    # - name: Verify Azure CLI
+    #   run: az --version
 
-    # 🔐 Azure Login using Service Principal
-    - name: Azure Login
-      uses: azure/login@v2
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    # # 🔐 Azure Login using Service Principal
+    # - name: Azure Login
+    #   uses: azure/login@v2
+    #   with:
+    #     creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Deploy to Azure Web App
-      uses: azure/webapps-deploy@v3
-      with:
-        app-name: your-app-name
-        package: target/*.jar
+    # - name: Deploy to Azure Web App
+    #   uses: azure/webapps-deploy@v3
+    #   with:
+    #     app-name: your-app-name
+    #     package: target/*.jar
