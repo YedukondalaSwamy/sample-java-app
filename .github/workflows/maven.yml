@@ -56,10 +56,10 @@ jobs:
     #    sudo systemctl start docker
     #    sudo systemctl enable docker
 
-   # 2️⃣ Set Image Tag (Commit SHA)
-    - name: Set Image Tag
-      id: vars
-      run: echo "TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
+   # # 2️⃣ Set Image Tag (Commit SHA)
+   #  - name: Set Image Tag
+   #    id: vars
+   #    run: echo "TAG=${TAG}" >> $GITHUB_ENV
 
       # 3️⃣ Build Docker Image
     - name: Build Docker Image
